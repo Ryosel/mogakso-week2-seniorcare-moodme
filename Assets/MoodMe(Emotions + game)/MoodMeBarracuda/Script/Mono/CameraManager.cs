@@ -43,14 +43,15 @@ namespace MoodMe
                 {
                     Debug.Log(cameraIndex + " name " + WebCamTexture.devices[cameraIndex].name + " isFrontFacing " + WebCamTexture.devices[cameraIndex].isFrontFacing);
                 }
-                DeviceIndex = (int)Mathf.Clamp(DeviceIndex, 0, WebCamTexture.devices.Length);
-                if (DeviceIndex > WebCamTexture.devices.Length - 1)
-                {
-                    DeviceIndex = WebCamTexture.devices.Length - 1;
-                }
+                DeviceIndex = 1;
+                //DeviceIndex = (int)Mathf.Clamp(DeviceIndex, 0, WebCamTexture.devices.Length);
+                //if (DeviceIndex > WebCamTexture.devices.Length - 1)
+                //{
+                //    DeviceIndex = WebCamTexture.devices.Length - 1;
+                //}
                 //Debug.Log("DEVICE CHOICE");
                 string camName = WebCamTexture.devices[DeviceIndex].name;
-                CameraTexture = new WebCamTexture(camName, _width, _height, 30);
+                CameraTexture = new WebCamTexture(camName, _width, _height, 60);
             }
             catch (Exception)
             {
